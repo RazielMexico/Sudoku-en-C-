@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Sudoku
 {
-    class Metodos_sudokus
+    class Metodos_sudokus : Form1
     {
         Random rnd = new Random();
         //METODOS DEL DATAGIRDVIEW
@@ -136,7 +136,7 @@ namespace Sudoku
                         {
                             Tabla.Rows[x].Cells[y].Style.BackColor = Color.Red;
                             contador = 1;
-                            //Correcto = false;
+                            Correcto = false;
                         }
                     }
                 }
@@ -191,7 +191,7 @@ namespace Sudoku
                     {
                         Tabla.Rows[x].Cells[y].Style.BackColor = Color.Yellow;
                         contador = 1;
-                        //Correcto = false;
+                        Correcto = false;
                     }
                 }
                 contador = 0;
@@ -242,7 +242,7 @@ namespace Sudoku
                     {
                         Tabla.Rows[y].Cells[x].Style.BackColor = Color.Orange;
                         contador = 1;
-                        //Correcto = false;
+                        Correcto = false;
                     }
                 }
                 contador = 0;
@@ -283,14 +283,13 @@ namespace Sudoku
             {
                 for (int x = 0; x < 9; x++)
                 {
-                    if (Tabla.Rows[y].Cells[x].Value.ToString() == string.Empty || Tabla.Rows[y].Cells[x].Value.ToString() == "")
+                    if (Tabla.Rows[y].Cells[x].Value.ToString().Equals(string.Empty) || Tabla.Rows[y].Cells[x].Value.ToString().Equals(" ") || Tabla.Rows[y].Cells[x].Value.ToString().Equals(null))
                     {
                         Tabla.Rows[y].Cells[x].Style.BackColor = Color.Purple;
-                        //Correcto = false;
+                        Correcto = false;
                     }
 
                 }
-
             }
 
             return Tabla;

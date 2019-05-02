@@ -19,6 +19,7 @@ namespace Sudoku
         }
 
         public static bool Correcto = true;
+
         DataSet ds = new DataSet();
         static Metodos_sudokus sudoku = new Metodos_sudokus();
 
@@ -111,6 +112,7 @@ namespace Sudoku
                 button3.Enabled = true;
                 btnVerificar.Enabled = true;
                 button4.Enabled = true;
+                
             }
         }
 
